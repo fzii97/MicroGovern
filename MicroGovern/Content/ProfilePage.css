@@ -1,0 +1,20 @@
+﻿body {
+}
+
+.huge {
+  font-size: 40px;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.whitetext {
+    color: #aaa;
+}
+
+.italic {
+    font-style: italic;
+}
+
