@@ -27,6 +27,7 @@ namespace MicroGovern.Controllers.Profile
             //userID = 6;
             if (userID > 0)
             {
+                //hello
                 //UserDetails myDetails = db.usersdb.Single(x => x.ApplicationUserId == userID);
                 UserDetails myDetails = db.usersdb.Single(x => x.ID == userID);
                 return View(myDetails);
