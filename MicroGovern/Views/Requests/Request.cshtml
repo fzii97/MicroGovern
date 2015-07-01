@@ -1,0 +1,90 @@
+﻿@model MicroGovern.Models.Request_mng.ARequest
+
+@{
+    ViewBag.Title = "Request";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Requests</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestIniated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestIniated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Details)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Details)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkDueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkDueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkableTimeRange)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkableTimeRange)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PicURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PicURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BidsVisibility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BidsVisibility)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
