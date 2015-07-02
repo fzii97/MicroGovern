@@ -1,6 +1,7 @@
 namespace MicroGovern.Migrations
 {
     using Microsoft.AspNet.Identity.EntityFramework;
+    using MySql.Data.Entity;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -12,6 +13,7 @@ namespace MicroGovern.Migrations
         {
             AutomaticMigrationsEnabled = true;
             ContextKey = "MicroGovern.Models.ApplicationDbContext";
+            SetSqlGenerator("MySql.Data.MySqlClient", new MySqlMigrationSqlGenerator());
         }
 
         protected override void Seed(MicroGovern.Models.ApplicationDbContext context)

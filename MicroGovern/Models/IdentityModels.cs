@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System;
+using System.Data.Entity;
 
 namespace MicroGovern.Models
 {
@@ -20,8 +21,26 @@ namespace MicroGovern.Models
         }
     }
 
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            
+            modelBuilder.Entity<IdentityRole>()
+                        .Property(c => c.Name)
+                        .HasMaxLength(128)
+                        .IsRequired();
+
+            modelBuilder.Entity<ApplicationUser>()
+                        .ToTable("AspNetUsers")
+                        .Property(c => c.UserName)
+                        .HasMaxLength(128)
+                        .IsRequired();
+                        
+        }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
